@@ -1,5 +1,3 @@
-package org.example.first;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -18,10 +16,20 @@ public class Main {
         Customer customer1 = new Customer("firstname1", "lastname1");
         Order order1 = new Order("01/01/2022");
         OrderLine orderLine1 = new OrderLine(2);
-        Product product1 = new Product("TV", "Television");
+        OrderLine orderLine2 = new OrderLine(5);
+        OrderLine orderLine3 = new OrderLine(9);
+        Product product1 = new CD("CD", "Compact Disc", "Artist");
+        Product product2 = new Book("Book", "My favourite book", "Title");
+        Product product3 = new DVD("DVD", "Digital Versatile Disc", "Genre");
 
         orderLine1.setProduct(product1);
+        orderLine2.setProduct(product2);
+        orderLine3.setProduct(product3);
+
         order1.addOrderLine(orderLine1);
+        order1.addOrderLine(orderLine2);
+        order1.addOrderLine(orderLine3);
+
         customer1.addOrder(order1);
 
         em.persist(customer1);

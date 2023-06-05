@@ -1,5 +1,3 @@
-package org.example.first;
-
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
